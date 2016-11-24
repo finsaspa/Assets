@@ -19,5 +19,12 @@
       "jquery/3.1.0/jquery.js"
     ],
     "sourceMap": true
+  },
+  {
+    "outputFileName": "underscore-js/1.8.3/underscore.min.js",
+    "inputFiles": [
+      "underscore-js/1.8.3/underscore.js"
+    ],
+    "sourceMap": true
   }
 ]
