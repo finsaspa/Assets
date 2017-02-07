@@ -1,2 +1,2 @@
 # Assets
-Web assets used for our projects.
+Web assets used inside our projects.
