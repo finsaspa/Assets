@@ -1,4 +1,4 @@
-// Type definitions for Kendo UI Professional v2017.1.118
+// Type definitions for Kendo UI Professional v2017.1.223
 // Project: http://www.telerik.com/kendo-ui
 // Definitions by: Telerik <https://github.com/telerik/>
 
@@ -4075,7 +4075,7 @@ declare namespace kendo.ui {
         dataItem(row: string): kendo.data.ObservableObject;
         dataItem(row: Element): kendo.data.ObservableObject;
         dataItem(row: JQuery): kendo.data.ObservableObject;
-        dataItems(): void;
+        dataItems(): kendo.data.ObservableArray;
         destroy(): void;
         edit(item: JQuery): void;
         items(): any;
@@ -4605,6 +4605,7 @@ declare namespace kendo.ui {
         culture?: string;
         decimals?: number;
         downArrowText?: string;
+        factor?: number;
         format?: string;
         max?: number;
         min?: number;
@@ -5779,6 +5780,13 @@ declare namespace kendo.ui {
 
         destroy(): void;
         enable(enable: boolean): void;
+        max(): number;
+        max(value: number): void;
+        max(value: string): void;
+        min(): number;
+        min(value: number): void;
+        min(value: string): void;
+        setOptions(options: any): void;
         value(): number;
         value(value: number): void;
         resize(): void;
@@ -6907,6 +6915,7 @@ declare namespace kendo.ui {
         options: TreeListOptions;
 
         dataSource: kendo.data.DataSource;
+        columns: any;
 
         element: JQuery;
         wrapper: JQuery;
@@ -8470,8 +8479,9 @@ declare namespace kendo.drawing {
 
         constructor(options?: PathOptions);
 
-        static fromPoints(points: any): kendo.drawing.Path;
-        static fromRect(rect: kendo.geometry.Rect): kendo.drawing.Path;
+        static fromArc(arc: kendo.geometry.Arc, options?: any): kendo.drawing.Path;
+        static fromPoints(points: any, options?: any): kendo.drawing.Path;
+        static fromRect(rect: kendo.geometry.Rect, options?: any): kendo.drawing.Path;
         static parse(svgPath: string, options?: any): kendo.drawing.Path;
 
         bbox(): kendo.geometry.Rect;
@@ -19215,8 +19225,9 @@ declare namespace kendo.dataviz.drawing {
 
         constructor(options?: PathOptions);
 
-        static fromPoints(points: any): kendo.drawing.Path;
-        static fromRect(rect: kendo.geometry.Rect): kendo.drawing.Path;
+        static fromArc(arc: kendo.geometry.Arc, options?: any): kendo.drawing.Path;
+        static fromPoints(points: any, options?: any): kendo.drawing.Path;
+        static fromRect(rect: kendo.geometry.Rect, options?: any): kendo.drawing.Path;
         static parse(svgPath: string, options?: any): kendo.drawing.Path;
 
         bbox(): kendo.geometry.Rect;
