@@ -10240,8 +10240,9 @@ kendo.ui.ListView.prototype = {
 
     dataItems: function() {
         /// <summary>
-        /// Returns the array that is bound to the widget
+        /// 
         /// </summary>
+        /// <returns type="kendo.data.ObservableArray">Returns the observable array that is bound to the widget</returns>
 
     },
 
@@ -11027,7 +11028,7 @@ $.fn.kendoMultiSelect = function(options) {
     /// &#10;ignoreCase - Boolean (default: true)
     /// &#10;If set to false case-sensitive search will be performed to find suggestions. The widget performs case-insensitive searching by default.
     /// &#10;
-    /// &#10;minLength - Number (default: 0)
+    /// &#10;minLength - Number (default: 1)
     /// &#10;The minimum number of characters the user must type before a search is performed. Set to a higher value if the search could match a lot of items.
 /// &#10;A zero value means that a request will be made as soon as the user focuses the widget.
     /// &#10;
@@ -11355,6 +11356,9 @@ $.fn.kendoNumericTextBox = function(options) {
     /// &#10;
     /// &#10;downArrowText - String (default: "Decrease value")
     /// &#10;Specifies the text of the tooltip on the down arrow.
+    /// &#10;
+    /// &#10;factor - Number (default: "1")
+    /// &#10;Specifies the factor by which the value is multiplied. The obtained result is used as edit value. So, if 15 as string is entered in the NumericTextBox and the factor value is set to 100 the visual value will be 1500. On blur the visual value will be divided by 100 thus scaling the widget value to the original proportion.
     /// &#10;
     /// &#10;format - String (default: "n")
     /// &#10;Specifies the number format used when the widget is not focused. Any valid number format is allowed.Compare with the decimals property.
@@ -12801,6 +12805,35 @@ kendo.ui.Slider.prototype = {
         /// Enable/Disable the Slider widget.
         /// </summary>
         /// <param name="enable" type="Boolean" >The argument, which defines whether to enable/disable the Slider.</param>
+
+    },
+
+
+    max: function(value) {
+        /// <summary>
+        /// Gets/Sets the max value of the Slider.
+        /// </summary>
+        /// <param name="value" type="Object" >The max value to set.</param>
+        /// <returns type="Number">The max value of the Slider.</returns>
+
+    },
+
+
+    min: function(value) {
+        /// <summary>
+        /// Gets/Sets the min value of the Slider.
+        /// </summary>
+        /// <param name="value" type="Object" >The min value to set.</param>
+        /// <returns type="Number">The min value of the Slider.</returns>
+
+    },
+
+
+    setOptions: function(options) {
+        /// <summary>
+        /// Changes the initial Slider configuration.
+        /// </summary>
+        /// <param name="options" type="Object" >The new configuration options. It can be used for changing "min", "max", "smallStep" and "largeStep" options of the Slider.</param>
 
     },
 

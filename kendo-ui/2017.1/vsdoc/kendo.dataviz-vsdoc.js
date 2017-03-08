@@ -5351,7 +5351,8 @@ $.fn.kendoChart = function(options) {
     /// &#10;The default options for all series.
     /// &#10;
     /// &#10;theme - String 
-    /// &#10;The chart theme.The supported values are:
+    /// &#10;The chart theme. This can be either a built-in theme or "sass".
+/// &#10;When set to "sass" the chart will read the variables from the SASS-based themes.The supported values are:
     /// &#10;
     /// &#10;title - String 
     /// &#10;The chart title configuration options or text.
@@ -6895,7 +6896,8 @@ $.fn.kendoSparkline = function(options) {
     /// &#10;Default values for each series.
     /// &#10;
     /// &#10;theme - String 
-    /// &#10;Sets Chart theme. Available themes: default, blueOpal, black.
+    /// &#10;The sparkline theme. This can be either a built-in theme or "sass".
+/// &#10;When set to "sass" the sparkline will read the variables from the SASS-based themes.The supported values are:
     /// &#10;
     /// &#10;tooltip - Object 
     /// &#10;The data point tooltip configuration options.
@@ -7107,7 +7109,8 @@ $.fn.kendoStockChart = function(options) {
     /// &#10;Default values for each series.
     /// &#10;
     /// &#10;theme - String 
-    /// &#10;Sets Chart theme. Available themes: default, blueOpal, black.
+    /// &#10;The chart theme. This can be either a built-in theme or "sass".
+/// &#10;When set to "sass" the chart will read the variables from the SASS-based themes.The supported values are:
     /// &#10;
     /// &#10;title - Object 
     /// &#10;The chart title configuration options or text.
