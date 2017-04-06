@@ -1,5 +1,5 @@
 ﻿/*
-* TelerikReporting v11.0.17.222 (http://www.telerik.com/products/reporting.aspx)
+* TelerikReporting v11.0.17.406 (http://www.telerik.com/products/reporting.aspx)
 * Copyright 2017 Telerik AD. All rights reserved.
 *
 * Telerik Reporting commercial licenses may be obtained at
@@ -63,6 +63,7 @@
 .trv-content{position:relative;-ms-flex:1 1;flex:1 1 0;height:100%;margin-top:-1px}
 .k-ie9 .trv-content{position:absolute;margin-top:1px;top:2.5em;bottom:0;left:0;right:0;height:auto}
 .trv-menu-large{display:block;border-style:none}
+.trv-menu-large .k-item>.k-link>.k-icon{margin:-8px 0 0}
 .trv-menu-small{display:none;border-style:none}
 .k-ie9 .trv-menu-small .k-link,.k-ie9 .trv-menu-large .k-link{white-space:nowrap}
 .trv-document-map{position:absolute;width:15em;height:auto;top:0;bottom:0;left:0;z-index:10}
@@ -93,4 +94,4 @@
 .trv-parameters-area.hidden~.trv-pages-area{right:0}
 .trv-document-map.hidden~.trv-pages-area
 {left:0}}
-/* DO NOT MODIFY OR DELETE THIS LINE! UPGRADE WIZARD CHECKSUM 3DFB319236FB8E542A341AAACCE72216 */
+/* DO NOT MODIFY OR DELETE THIS LINE! UPGRADE WIZARD CHECKSUM 322D8611CCE37817D6A304374CE4E647 */
