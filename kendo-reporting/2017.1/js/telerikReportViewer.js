@@ -1,5 +1,5 @@
 ﻿/*
-* TelerikReporting v11.0.17.222 (http://www.telerik.com/products/reporting.aspx)
+* TelerikReporting v11.0.17.406 (http://www.telerik.com/products/reporting.aspx)
 * Copyright 2017 Telerik AD. All rights reserved.
 *
 * Telerik Reporting commercial licenses may be obtained at
@@ -384,6 +384,8 @@
             baseUrl = utils.rtrim(options.serviceUrl || options.baseUrl, "\\/");
         }
         var authToken;
+        var needsToken = options.useReportServer && (options.credentials.username || options.credentials.password);
+        needsToken = !!needsToken;
         function validateClientID(clientID) {
             if (!clientID) throw "Invalid cliendID";
         }
@@ -394,6 +396,9 @@
             return utils.stringFormat(template, args);
         }
         function setAuthHeader(xhr) {
+            if (!needsToken) {
+                return;
+            }
             ensureTokenIfNeeded();
             if (authToken) {
                 xhr.setRequestHeader("Authorization", "Bearer " + authToken.access_token);
@@ -1032,7 +1037,7 @@
             throwIfNoReportInstance();
             throwIfNoReportDocument();
             onServerActionStarted();
-            loadReportAsync(false, reportDocumentId, actionId);
+            controller.refreshReportCore(false, reportDocumentId, actionId);
         }
         function throwIfNotInitialized() {
             if (!isInitialized()) {
@@ -1283,7 +1288,7 @@
                     return vmode;
                 }
                 if (report) {
-                    loadReportAsync(false, reportDocumentId);
+                    controller.refreshReportCore(false, reportDocumentId);
                 }
                 return controller;
             },
@@ -1309,6 +1314,9 @@
             },
             previewReport: function(ignoreCache, baseDocumentId, actionId) {
                 controller.onLoadedReportChange();
+                controller.refreshReportCore(ignoreCache, baseDocumentId, actionId);
+            },
+            refreshReportCore: function(ignoreCache, baseDocumentId, actionId) {
                 loadReportAsync(ignoreCache, baseDocumentId, actionId);
             },
             refreshReport: function(ignoreCache, baseDocumentId, actionId) {
@@ -1337,7 +1345,7 @@
                         raiseError(sr.missingOrInvalidParameter);
                     } else {
                         controller.setParameters(params);
-                        loadReportAsync(ignoreCache, baseDocumentId, actionId);
+                        controller.refreshReportCore(ignoreCache, baseDocumentId, actionId);
                     }
                 }).fail(function(error) {
                     raiseError(error);
@@ -4576,4 +4584,4 @@
         });
     };
 })(window.telerikReportViewer = window.telerikReportViewer || {}, jQuery, window, document);
-/* DO NOT MODIFY OR DELETE THIS LINE! UPGRADE WIZARD CHECKSUM 913CE6849D18EA03918A745B2921ACA8 */
+/* DO NOT MODIFY OR DELETE THIS LINE! UPGRADE WIZARD CHECKSUM BA076166B476E3D0C8D59084385FE781 */
